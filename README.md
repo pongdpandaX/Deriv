@@ -1,6 +1,16 @@
 # Deriv
 Deriv Exercise for probability game
 
+Smart contract that implements a coin-toss game. The rules of the game
+should be as follows:
+
+A user can send any amount of crypto to the smart contract. If the amount sent is
+larger than the contract’s current treasury balance, the contract should send the
+funds back as-is.
+
+The contract should with 50.1% probability send back nothing to the user, and with
+49.9% probability send back twice the amount.
+
 ## Technology Used
 DAPP : Purely HTML and Javascript
 
@@ -18,6 +28,10 @@ https://bsclegend.com/deriv.html
 
 ## Overview
 There are two key folders. `contracts` holds the solidty code. `frontend` contains the ui for the smart contracts.
+
+In order to eliminate the threat of hackers to exploit the random generation, I added a variable upon creation of the contract.
+
+This varaiable also changes in every call of the game.
 
 
 ### BSC Testnet Information

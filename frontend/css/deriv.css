@@ -1,0 +1,154 @@
+ /* The Modal (background) */
+ .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 5px solid #888;
+    width: 500px;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input {
+    width: 100px;
+    display: inline-block;
+    height:25px;
+}
+
+input:focus {
+    border-color: yellow;
+}
+
+.centerBox {
+    border-radius: 10px;
+    margin: auto;
+    width: 50%;
+    min-width:500px;
+    border: 3px solid red;
+    padding: 10px;
+}
+
+.textLeftAlign {
+    text-align:left;
+}
+
+.btn {
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-warning,
+.btn-warning:active {
+    background-color: #FC434E !important;
+    border-color: #FC434E !important;
+    color: #fff !important;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+    .btn-warning:hover,
+    .btn-warning:focus,
+    .btn-warning.focus,
+    .btn-warning.active {
+        color: #0a0800 !important;
+        background-color: #ffd10a !important;
+        border-color: #ffd10a !important;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    }
+
+.displayText {
+    padding: 5px 5px 5px 5px;
+    font-family: Bahnschrift;
+    font-size: 1.3em;
+    line-height: 1.2;
+}
+
+.headerDiv {
+    padding-top:5px;
+    background-color: black;
+    height: 50px;
+}
+
+.rightAlign {
+    padding-top: 10px;
+    padding-right: 10px;
+    display: inline-block;
+    float: right;
+}
+
+.paddingMed {
+    padding: 10px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI';
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+h2 {
+    text-align:center;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    text-align:center;
+}
+
+.disabledBtn {
+    background-color : gray;
+}

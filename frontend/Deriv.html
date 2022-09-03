@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Deriv</title>
+    <link rel="shortcut icon" href="https://www.bsclegend.com/assets/images/pandalogo1-1-121x97.png" type="image/x-icon">
+    <meta charset="utf-8" />
+
+    <script src="js/deriv.js" type="text/javascript"></script>
+    <script src="js/bundle.js" type="text/javascript"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"> </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.esm.min.js"></script>
+    <link rel="stylesheet" href="css/deriv.css">
+
+    <script>
+        const BSCDiceTokenContract = "0x21e1dea25912b9CCF0faC0d139Ca7BA5bD23be9e"; //BSCTestNet token contract address here
+        const BSCTDiceGameContract = "0x87947000ef213af478e4e9783BcA95738D7B8107";//BSCTestNet DiceGame contract address here
+        const BSCTNetworkId = 97;
+        const RopstenNetworkId = 3;
+        const GasLimit = 100000;
+
+        var myDice = 0;
+        var approvedBalance = 0;
+
+        $(document).ready(function () {
+            //connect wallet using metamask
+            ConnectWallet();
+            SetContractInfo();
+
+            CheckTokenApproval();
+            //Display BSC Testnet as default
+            ConnectToBSCTestNet();
+        });
+
+        
+    </script>
+</head>
+<body>
+    <div id="myModal" class="modal">
+        <div class="modal-content text-center">
+            <span class="close" onclick="CloseMessage()">&times;</span>
+            <p><label id="modalMsg"></label></p>
+        </div>
+
+    </div>
+    <div class="headerDiv">
+        <img src="https://deriv.com/static/1b57a116945933314eefeec0030c8e9d/6fdc6/logo.webp" width="100px" class="paddingMed" />
+        <div class="rightAlign"><a id="connectButton" class="btn displayText" onclick="ConnectWallet()">Connect</a></div>
+    </div>
+    <br />
+    <div class="centerBox textLeftAlign">
+        <h2>PROBABILITY GAME</h2><hr>
+        <h3>Account Information</h3> 
+        <a class="btn btn-warning displayText" href="https://testnet.binance.org/faucet-smart" target="_blank">Get BSC Testnet Token</a>
+        <p><strong>Address :</strong>  <label id="walletBSCT" for="html">NA</label>
+
+        </p>
+        <p><strong>My Native Balance :</strong> <label id="balanceBSCT" for="html">0 BNB</label> </p>
+        <p><strong>My Dice Token Balance :</strong> <label id="balanceTokenBSCT" for="html">0 BNB</label></p>
+        <p><strong>Contract Dice Balance :</strong> <label id="balanceContractTokenBSCT" for="html">0 BNB</label></p>
+        <a id="connectButton" class="btn btn-warning displayText" onclick="PlayGame()">Roll Dice</a> <input type="number" id="amountToPlay" placeholder="Enter Amount" onchange="    CheckAmount()"></p>
+        
+    </div>
+    <br />
+
+    <div class="centerBox textLeftAlign">
+        <h2>OPTION</h2><hr>
+        <h3>Setup the Game</h3>
+        <p><strong>Dice Contract :</strong>  <label id="contractBSCT" for="html">NA</label></p>
+        <p><strong>Game Contract :</strong>  <label id="contractHashLockBSCT" for="html">NA</label></p>
+        <a id="approveButton" class="btn btn-warning displayText" onclick="ApproveBSCToken()">Approve Game</a>
+        <a id="mintButton" class="btn btn-warning displayText" onclick="MintDiceToken()">Mint Dice</a>
+        <a id="fundButton" class="btn btn-warning displayText" onclick="FundToken()">Fund the Game</a>
+    </div>
+    <br />
+</body>
+</html>
